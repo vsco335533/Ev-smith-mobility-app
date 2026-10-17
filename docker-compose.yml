@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: evsmith-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: evsmith_user
+      POSTGRES_PASSWORD: evsmith_secure_password
+      POSTGRES_DB: evsmith_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - evsmith_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U evsmith_user -d evsmith_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: evsmith-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://evsmith_user:evsmith_secure_password@postgres:5432/evsmith_db
+      APP_ENV: production
+      API_BASE_URL: http://localhost:8000
+      JWT_SECRET_KEY: evsmith_super_secure_jwt_secret_change_in_production_2026_xyz
+    ports:
+      - "8000:8000"
+
+volumes:
+  evsmith_pgdata:

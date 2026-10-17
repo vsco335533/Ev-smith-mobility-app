@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "EVSMITH Mobility",
+    "slug": "evsmith-mobility",
+    "version": "1.0.0",
+    "sdkVersion": "57.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "evsmith",
+    "splash": {
+      "backgroundColor": "#080C0E"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#080C0E"
+      }
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you upload KYC documents."
+        }
+      ]
+    ]
+  }
+}
