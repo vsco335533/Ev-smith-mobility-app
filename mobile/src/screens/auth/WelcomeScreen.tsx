@@ -61,19 +61,13 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ navigation }) => {
       <View style={styles.content}>
         {/* Brand Header */}
         <View style={styles.header}>
-          {cleanLogo ? (
-            <View style={styles.logoImageContainer}>
-              <Image
-                source={{ uri: cleanLogo.trim() }}
-                style={styles.brandLogoImage}
-                resizeMode="contain"
-              />
-            </View>
-          ) : (
-            <View style={styles.logoBadge}>
-              <Zap size={22} color="#080C0E" fill="#080C0E" />
-            </View>
-          )}
+          <View style={styles.logoImageContainer}>
+            <Image
+              source={cleanLogo ? { uri: cleanLogo.trim() } : require('../../../assets/logo.png')}
+              style={styles.brandLogoImage}
+              resizeMode="contain"
+            />
+          </View>
           <Text style={styles.brandTitle}>
             {brandName} <Text style={styles.brandAccent}>{brandAccent}</Text>
           </Text>
@@ -168,13 +162,13 @@ const styles = StyleSheet.create({
   logoImageContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: spacing.xs + 4,
-    height: 52,
-    maxHeight: 60,
+    marginBottom: spacing.xs + 6,
+    height: 76,
   },
   brandLogoImage: {
-    width: 140,
-    height: 48,
+    width: 72,
+    height: 72,
+    borderRadius: 16,
   },
   logoBadge: {
     width: 44,

@@ -20,6 +20,7 @@ htmlcov/
 *.db
 backend/evsmith.db
 backend/static/uploads/*
+!backend/static/uploads/App-logo.jpeg
 !backend/static/uploads/.gitkeep
 
 # Node & Mobile

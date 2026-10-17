@@ -7,16 +7,21 @@
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
     "scheme": "evsmith",
+    "icon": "./assets/icon.png",
     "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
       "backgroundColor": "#080C0E"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.evsmith.mobility"
     },
     "android": {
       "package": "com.evsmith.mobility",
       "versionCode": 1,
       "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#080C0E"
       },
       "permissions": [
@@ -26,7 +31,8 @@
       ]
     },
     "web": {
-      "bundler": "metro"
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
     },
     "plugins": [
       [

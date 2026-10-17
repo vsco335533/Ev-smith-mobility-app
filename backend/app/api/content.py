@@ -14,7 +14,7 @@ DEFAULT_PAGES = {
         "subtitle": "Trusted Local EV Rental in Hyderabad",
         "image_url": "https://maxtronev.com/assets/Blog30-Bt25-yDw.webp",
         "content_data": {
-            "brand_logo_url": "",
+            "brand_logo_url": "https://ev-smith-mobility-app.onrender.com/static/uploads/App-logo.jpeg",
             "brand_name": "EVSMITH",
             "brand_accent": "MOBILITY",
             "tagline": "Trusted Local EV Rental in Hyderabad",
