@@ -19,13 +19,16 @@ const getDevServerIp = () => {
 
 const hostIp = getDevServerIp();
 
+export const PRODUCTION_API_URL = 'https://ev-smith-mobility-app.onrender.com';
+
 export const DEFAULT_API_URL =
   process.env.EXPO_PUBLIC_API_URL ||
+  (process.env.NODE_ENV === 'production' ? PRODUCTION_API_URL : null) ||
   Platform.select({
     web: 'http://localhost:8000',
-    default: `http://${hostIp}:8000`,
+    default: PRODUCTION_API_URL,
   }) ||
-  'http://localhost:8000';
+  PRODUCTION_API_URL;
 
 let customApiUrl = DEFAULT_API_URL;
 

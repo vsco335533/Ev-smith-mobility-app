@@ -14,9 +14,16 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.evsmith.mobility",
+      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#080C0E"
-      }
+      },
+      "permissions": [
+        "INTERNET",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "bundler": "metro"
