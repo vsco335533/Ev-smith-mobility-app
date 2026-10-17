@@ -25,9 +25,10 @@
         "backgroundColor": "#080C0E"
       },
       "permissions": [
-        "INTERNET",
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE"
+        "android.permission.INTERNET",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
       ]
     },
     "web": {
@@ -41,6 +42,11 @@
           "photosPermission": "The app accesses your photos to let you upload KYC documents."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "afb329fd-69a2-4c65-a611-a3391c60bc9d"
+      }
+    }
   }
 }
